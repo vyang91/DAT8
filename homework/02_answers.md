@@ -35,4 +35,5 @@
 
 	```grep -ir 'dictionary' . | wc -l```
 
-8. ```grep -iv "chicken\|steak" data/chipotle.tsv | cut -f1,1 | uniq | wc -l```
+8. Of the 1834 orders, 1599 of them contain chicken or steak.
+	```grep -i "chicken\|steak" data/chipotle.tsv | cut -f1,1 | uniq | wc -l```
