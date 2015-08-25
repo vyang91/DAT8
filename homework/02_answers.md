@@ -33,6 +33,6 @@
 6. ```find . -name *.?sv```
 7. Assumes only one instance of the word per line
 
-```grep -ir 'dictionary' . | wc -l```
+	```grep -ir 'dictionary' . | wc -l```
 
 8. ```grep -iv "chicken\|steak" data/chipotle.tsv | cut -f1,1 | uniq | wc -l```
