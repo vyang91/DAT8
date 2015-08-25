@@ -30,10 +30,13 @@
 	grep -i "chicken burrito" chipotle.tsv | grep -ic "black"
 	grep -i "chicken burrito" chipotle.tsv | grep -ic "pinto"
 	```
-6. ```find . -name *.?sv```
+6. Use find to find files...
+
+	```find . -name *.?sv```
 7. Assumes only one instance of the word per line
 
 	```grep -ir 'dictionary' . | wc -l```
 
 8. Of the 1834 orders, 1599 of them contain chicken or steak.
+
 	```grep -i "chicken\|steak" data/chipotle.tsv | cut -f1,1 | uniq | wc -l```
