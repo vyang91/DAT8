@@ -75,7 +75,6 @@ Tuesday | Thursday
 * Review the command line pre-class exercise ([code](code/02_command_line.md))
 * Git and GitHub ([slides](slides/02_git_github.pdf))
 * Intermediate command line
-* Wrap up: Course schedule, office hours
 
 **Homework:**
 * Complete the [command line homework assignment](homework/02_command_line_chipotle.md) with the Chipotle data.
@@ -100,25 +99,26 @@ Tuesday | Thursday
 * If you want to go much deeper into the command line, [Data Science at the Command Line](http://shop.oreilly.com/product/0636920032823.do) is a great book. The [companion website](http://datascienceatthecommandline.com/) provides installation instructions for a "data science toolbox" (a virtual machine with many more command line tools), as well as a long reference guide to popular command line tools.
 * If you want to do more at the command line with CSV files, try out [csvkit](http://csvkit.readthedocs.org/), which can be installed via `pip`.
 
-<!--
-
 -----
 
 ### Class 3: Data Reading and Cleaning
 * Git and GitHub assorted tips ([slides](slides/02_git_github.pdf))
-* Review command line homework ([solution](code/02_command_line.md#homework-solution))
+* Review command line homework (solution)
 * Python:
     * Spyder interface
-    * Review of list comprehensions
+    * Looping exercise
     * Lesson on file reading with airline safety data ([code](code/03_file_reading.py), [data](data/airlines.csv), [article](http://fivethirtyeight.com/features/should-travelers-avoid-flying-airlines-that-have-had-crashes-in-the-past/))
     * Data cleaning exercise
-    * Walkthrough of homework with Chipotle order data ([code](code/03_python_homework_chipotle.py), [data](data/chipotle.tsv), [article](http://www.nytimes.com/interactive/2015/02/17/upshot/what-do-people-actually-order-at-chipotle.html))
+    * Walkthrough of Python homework with Chipotle data ([code](code/03_python_homework_chipotle.py), [data](data/chipotle.tsv), [article](http://www.nytimes.com/interactive/2015/02/17/upshot/what-do-people-actually-order-at-chipotle.html))
 
 **Homework:**
-* Complete the [homework assignment](code/03_python_homework_chipotle.py) with the [Chipotle data](data/chipotle.tsv), and add a commented Python script to your GitHub repo. If you are unable to complete a part, try writing some pseudocode instead! You have until Monday to complete this assignment.
+* Complete the [Python homework assignment](code/03_python_homework_chipotle.py) with the Chipotle data, add a commented Python script to your GitHub repo, and submit a link using the homework submission form. You have until Tuesday (9/1) to complete this assignment.
 
 **Resources:**
+* [Want to understand Python's comprehensions? Think in Excel or SQL](http://blog.lerner.co.il/want-to-understand-pythons-comprehensions-think-like-an-accountant/) may be helpful if you are still confused by list comprehensions.
+* [My code isn't working](http://www.tecoed.co.uk/uploads/1/4/2/4/14249012/624506_orig.png) is a great flowchart explaining how to debug Python errors.
 * [PEP 8](https://www.python.org/dev/peps/pep-0008/) is Python's "classic" style guide, and is worth a read if you want to write readable code that is consistent with the rest of the Python community.
+* If you want to understand Python at a deeper level, Ned Batchelder's [Loop Like A Native](http://nedbatchelder.com/text/iter.html) and [Python Names and Values](http://nedbatchelder.com/text/names1.html) are excellent presentations.
 
 -----
 
@@ -127,28 +127,35 @@ Tuesday | Thursday
     * MovieLens 100k movie ratings ([data](data/u.user), [data dictionary](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt), [website](http://grouplens.org/datasets/movielens/))
     * Alcohol consumption by country ([data](data/drinks.csv), [article](http://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/))
     * Reports of UFO sightings ([data](data/ufo.csv), [website](http://www.nuforc.org/webreports.html))
+* Project question exercise
 
 **Homework:**
 * Complete "Exercise Three" from today's Pandas script. **Note:** You do not need to submit this assignment.
 * Read [How Software in Half of NYC Cabs Generates $5.2 Million a Year in Extra Tips](http://iquantny.tumblr.com/post/107245431809/how-software-in-half-of-nyc-cabs-generates-5-2) for an excellent example of exploratory data analysis.
+* The deadline for discussing your project ideas with an instructor is Tuesday (9/1), and your project question write-up is due Thursday (9/3).
 
 **Resources:**
 * Browsing or searching the Pandas [API Reference](http://pandas.pydata.org/pandas-docs/stable/api.html) is an excellent way to locate a function even if you don't know its exact name.
 * [What I do when I get a new data set as told through tweets](http://simplystatistics.org/2014/06/13/what-i-do-when-i-get-a-new-data-set-as-told-through-tweets/) is a fun (yet enlightening) look at the process of exploratory data analysis.
 
+<!--
+
 -----
 
 ### Class 5: Visualization
+* Python homework with the Chipotle data due (solution, detailed explanation)
 * Part 2 of Exploratory Data Analysis with Pandas ([code](code/04_pandas.py))
 * Visualization with Pandas and Matplotlib ([code](code/05_pandas_visualization.py))
 
 **Homework:**
-* Complete the [homework assignment](code/05_pandas_homework_imdb.py) with the [IMDb data](data/imdb_1000.csv), and add a Python script to your GitHub repo. This assignment is due next Monday.
+* Your project question write-up is due on Thursday.
+* Complete the [Pandas homework assignment](code/05_pandas_homework_imdb.py) with the [IMDb data](data/imdb_1000.csv). You have until Tuesday (9/8) to complete this assignment.
 
 **Pandas Resources:**
-* To learn more Pandas, review this [three-part tutorial](http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/), or review these two excellent (but extremely long) notebooks on Pandas: [introduction](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_5-Introduction-to-Pandas.ipynb) and [data wrangling](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_6-Data-Wrangling-with-Pandas.ipynb).
-* If you want to go really deep into Pandas (and NumPy), read the book [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do) by the creator of Pandas.
-* Here are examples of different types of [joins in Pandas](http://www.gregreda.com/2013/10/26/working-with-pandas-dataframes/#joining), for when you need to figure out how to merge two DataFrames.
+* To learn more Pandas, read this [three-part tutorial](http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/), or review these two excellent (but extremely long) notebooks on Pandas: [introduction](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_5-Introduction-to-Pandas.ipynb) and [data wrangling](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_6-Data-Wrangling-with-Pandas.ipynb).
+* If you want to go really deep into Pandas (and NumPy), read the book [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do), written by the creator of Pandas.
+* This notebook demonstrates the different types of [joins in Pandas](http://nbviewer.ipython.org/github/justmarkham/DAT8/blob/master/notebooks/05_pandas_merge.ipynb), for when you need to figure out how to merge two DataFrames.
+* This is a nice, short tutorial on [pivot tables](https://beta.oreilly.com/learning/pivot-tables) in Pandas.
 
 **Visualization Resources:**
 * Watch [Look at Your Data](https://www.youtube.com/watch?v=coNDCIMH8bk) (18 minutes) for an excellent example of why visualization is useful for understanding your data.
@@ -160,19 +167,12 @@ Tuesday | Thursday
 -----
 
 ### Class 6: Machine Learning
-* Review Python homework with the Chipotle data ([solution](code/03_python_homework_chipotle.py), [detailed explanation](http://nbviewer.ipython.org/github/Alexjmsherman/DAT7/blob/master/Python%20Homework%20with%20Chipotle%20data%20answers.ipynb))
 * Grouped box plots and grouped histograms ([code](code/05_pandas_visualization.py))
 * Human learning exercise:
     * [Iris dataset](http://archive.ics.uci.edu/ml/datasets/Iris) hosted by the UCI Machine Learning Repository
     * [Iris photo](http://sebastianraschka.com/Images/2014_python_lda/iris_petal_sepal.png)
     * [Solution](code/06_human_learning_iris.py)
 * Introduction to machine learning ([slides](slides/06_machine_learning.pdf))
-* Course project:
-    * [Example projects](https://github.com/justmarkham/DAT-project-examples)
-    * Project question exercise
-
-**Homework:**
-* Your deadline for discussing your project ideas with an instructor is Monday, and your project question and dataset is due Wednesday.
 
 **Resources:**
 * For a very quick summary of the key points about machine learning, watch [What is machine learning, and how does it work?](https://www.youtube.com/watch?v=elojMnjn4kk) (10 minutes) or read the associated [notebook](http://nbviewer.ipython.org/github/justmarkham/scikit-learn-videos/blob/master/01_machine_learning_intro.ipynb).
@@ -194,7 +194,6 @@ Tuesday | Thursday
     * [IMDb: The Shawshank Redemption](http://www.imdb.com/title/tt0111161/)
 
 **Homework:**
-* Your project question and dataset is due on Wednesday.
 * **Optional:** Complete the homework exercise listed in the [web scraping code](code/07_web_scraping.py). It will take the place of any one homework you miss, past or future!
 * If you're not using Anaconda, [install the IPython Notebook](http://ipython.org/install.html) using `pip`. (The IPython Notebook comes with Anaconda.)
 * If you're not using Anaconda, [install Seaborn](http://stanford.edu/~mwaskom/software/seaborn/installing.html) using `pip`. If you're using Anaconda, install Seaborn by running `conda install seaborn` at the command line.
