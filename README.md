@@ -20,6 +20,7 @@ Tuesday | Thursday
 10/20: Regularization and<br>Clustering, **Peer Review Due** | 10/22: Course Review and Bonus Topics
 10/27: Bonus Topics and<br>**Final Project Presentation** | 10/29: **Final Project Presentation**
 
+<!--
 ### Before the Course Begins
 * Install [Git](http://git-scm.com/downloads).
 * Create an account on the [GitHub](https://github.com/) website.
@@ -31,6 +32,7 @@ Tuesday | Thursday
     * Alternatively, you can walk through the [setup checklist](other/setup_checklist.md) yourself.
 * Once you receive an email invitation from Slack, join our "DAT8 team" and add your photo.
 * Practice Python using the resources below.
+-->
 
 ### Python Resources
 * [Codecademy's Python course](http://www.codecademy.com/en/tracks/python): Good beginner material, including tons of in-browser exercises.
@@ -130,9 +132,9 @@ Tuesday | Thursday
 * Project question exercise
 
 **Homework:**
-* Complete "Exercise Three" from today's Pandas script. **Note:** You do not need to submit this assignment.
-* Read [How Software in Half of NYC Cabs Generates $5.2 Million a Year in Extra Tips](http://iquantny.tumblr.com/post/107245431809/how-software-in-half-of-nyc-cabs-generates-5-2) for an excellent example of exploratory data analysis.
 * The deadline for discussing your project ideas with an instructor is Tuesday (9/1), and your project question write-up is due Thursday (9/3).
+* Read [How Software in Half of NYC Cabs Generates $5.2 Million a Year in Extra Tips](http://iquantny.tumblr.com/post/107245431809/how-software-in-half-of-nyc-cabs-generates-5-2) for an excellent example of exploratory data analysis.
+* Read [Anscombe's Quartet, and Why Summary Statistics Don't Tell the Whole Story](http://data.heapanalytics.com/anscombes-quartet-and-why-summary-statistics-dont-tell-the-whole-story/) for a classic example of why visualization is useful.
 
 **Resources:**
 * Browsing or searching the Pandas [API Reference](http://pandas.pydata.org/pandas-docs/stable/api.html) is an excellent way to locate a function even if you don't know its exact name.
@@ -150,6 +152,7 @@ Tuesday | Thursday
 **Homework:**
 * Your project question write-up is due on Thursday.
 * Complete the [Pandas homework assignment](code/05_pandas_homework_imdb.py) with the [IMDb data](data/imdb_1000.csv). You have until Tuesday (9/8) to complete this assignment.
+* If you're not using Anaconda, install the [IPython Notebook](http://ipython.org/install.html) using `pip`. (The IPython Notebook is included with Anaconda.)
 
 **Pandas Resources:**
 * To learn more Pandas, read this [three-part tutorial](http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/), or review these two excellent (but extremely long) notebooks on Pandas: [introduction](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_5-Introduction-to-Pandas.ipynb) and [data wrangling](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_6-Data-Wrangling-with-Pandas.ipynb).
@@ -162,26 +165,35 @@ Tuesday | Thursday
 * Watch [Look at Your Data](https://www.youtube.com/watch?v=coNDCIMH8bk) (18 minutes) for an excellent example of why visualization is useful for understanding your data.
 * For more on Pandas plotting, read this [notebook](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_7-Plotting-with-Pandas.ipynb) or the [visualization page](http://pandas.pydata.org/pandas-docs/stable/visualization.html) from the official Pandas documentation.
 * To learn how to customize your plots further, browse through this [notebook on matplotlib](http://nbviewer.ipython.org/github/fonnesbeck/Bios8366/blob/master/notebooks/Section2_4-Matplotlib.ipynb) or this [similar notebook](http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb).
+* Read [Overview of Python Visualization Tools](http://pbpython.com/visualization-tools-1.html) for a useful comparison of Matplotlib, Pandas, Seaborn, ggplot, Bokeh, Pygal, and Plotly.
 * To explore different types of visualizations and when to use them, [Choosing a Good Chart](http://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf) and [The Graphic Continuum](http://www.coolinfographics.com/storage/post-images/The-Graphic-Continuum-POSTER.jpg) are nice one-page references, and the interactive [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/) has handy filtering capabilities.
 * This [PowerPoint presentation](http://www2.research.att.com/~volinsky/DataMining/Columbia2011/Slides/Topic2-EDAViz.ppt) from Columbia's Data Mining class contains lots of good advice for properly using different types of visualizations.
+* Harvard's Data Science course includes an excellent lecture on [Visualization Goals, Data Types, and Statistical Graphs](http://cm.dce.harvard.edu/2015/01/14328/L03/screen_H264LargeTalkingHead-16x9.shtml) (83 minutes), for which the [slides](https://docs.google.com/file/d/0B7IVstmtIvlHLTdTbXdEVENoRzQ/edit) are also available.
 
 -----
 
 ### Class 6: Machine Learning
-* Grouped box plots and grouped histograms ([code](code/05_pandas_visualization.py))
+* Part 2 of Visualization ([code](code/05_pandas_visualization.py))
+* Brief introduction to the IPython Notebook
 * Human learning exercise:
     * [Iris dataset](http://archive.ics.uci.edu/ml/datasets/Iris) hosted by the UCI Machine Learning Repository
     * [Iris photo](http://sebastianraschka.com/Images/2014_python_lda/iris_petal_sepal.png)
-    * [Solution](code/06_human_learning_iris.py)
+    * Solution (notebook, notebook code)
 * Introduction to machine learning ([slides](slides/06_machine_learning.pdf))
+* Machine learning exercise ([article](http://blog.dominodatalab.com/10-interesting-uses-of-data-science/))
+
+**Homework:**
+* If you're not using Anaconda, install [requests](http://www.python-requests.org/en/latest/user/install/) and [Beautiful Soup 4](http://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup) using `pip`. (Both of these packages are included with Anaconda.)
 
 **Resources:**
 * For a very quick summary of the key points about machine learning, watch [What is machine learning, and how does it work?](https://www.youtube.com/watch?v=elojMnjn4kk) (10 minutes) or read the associated [notebook](http://nbviewer.ipython.org/github/justmarkham/scikit-learn-videos/blob/master/01_machine_learning_intro.ipynb).
 * For a more in-depth introduction to machine learning, read section 2.1 (14 pages) of Hastie and Tibshirani's excellent book, [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/). (It's a free PDF download!)
-* For a really nice comparison of supervised versus unsupervised learning, plus an introduction to reinforcement learning, watch this [video](http://work.caltech.edu/library/014.html) (13 minutes) from Caltech's [Learning From Data](http://work.caltech.edu/telecourse.html) course.
+* The [Learning Paradigms](http://work.caltech.edu/library/014.html) video (13 minutes) from Caltech's [Learning From Data course](http://work.caltech.edu/telecourse.html) provides a nice comparison of supervised versus unsupervised learning, as well as an introduction to "reinforcement learning".
+* [Real-World Active Learning](https://beta.oreilly.com/ideas/real-world-active-learning) is a readable and thorough introduction to "active learning", a variation of machine learning in which humans label only the most "important" observations.
 * For a preview of some of the machine learning content we will cover during the course, read Sebastian Raschka's [overview of the supervised learning process](https://github.com/rasbt/pattern_classification/blob/master/machine_learning/supervised_intro/introduction_to_supervised_machine_learning.md).
 * [The Emoji Translation Project](https://www.kickstarter.com/projects/fred/the-emoji-translation-project) is a really fun application of machine learning.
 * Look up the [characteristics of your zip code](http://www.esri.com/landing-pages/tapestry/), and then read about the [67 distinct segments](http://doc.arcgis.com/en/esri-demographics/data/tapestry-segmentation.htm) in detail.
+* For a recap of the IPython Notebook introduction (and a preview of scikit-learn), watch [scikit-learn and the IPython Notebook](https://www.youtube.com/watch?v=IsXXlYVBt1M) (15 minutes).
 
 -----
 
@@ -196,9 +208,7 @@ Tuesday | Thursday
 
 **Homework:**
 * **Optional:** Complete the homework exercise listed in the [web scraping code](code/07_web_scraping.py). It will take the place of any one homework you miss, past or future!
-* If you're not using Anaconda, [install the IPython Notebook](http://ipython.org/install.html) using `pip`. (The IPython Notebook comes with Anaconda.)
 * If you're not using Anaconda, [install Seaborn](http://stanford.edu/~mwaskom/software/seaborn/installing.html) using `pip`. If you're using Anaconda, install Seaborn by running `conda install seaborn` at the command line.
-* Watch this brief introduction to [scikit-learn and the IPython Notebook](https://www.youtube.com/watch?v=IsXXlYVBt1M) (15 minutes), and try to follow along with the Notebook introduction on your own computer.
 * Read Kevin's [introduction to reproducibility](http://www.dataschool.io/reproducibility-is-not-just-for-researchers/), read Jeff Leek's [guide to creating a reproducible analysis](https://github.com/jtleek/datasharing), and watch this related [Colbert Report video](http://thecolbertreport.cc.com/videos/dcyvro/austerity-s-spreadsheet-error) (8 minutes).
 
 **API Resources:**
@@ -222,8 +232,6 @@ Tuesday | Thursday
 * Reproducibility
     * Discuss assigned readings: [introduction](http://www.dataschool.io/reproducibility-is-not-just-for-researchers/), [Colbert Report video](http://thecolbertreport.cc.com/videos/dcyvro/austerity-s-spreadsheet-error), [cabs article](http://iquantny.tumblr.com/post/107245431809/how-software-in-half-of-nyc-cabs-generates-5-2), [Tweet](https://twitter.com/jakevdp/status/519563939177197571), [creating a reproducible analysis](https://github.com/jtleek/datasharing)
     * Examples: [Classic rock](https://github.com/fivethirtyeight/data/tree/master/classic-rock), [student project 1](https://github.com/jwknobloch/DAT4_final_project), [student project 2](https://github.com/justmarkham/DAT4-students/tree/master/Jonathan_Bryan/Project_Files)
-* Machine learning exercise ([article](http://blog.dominodatalab.com/10-interesting-uses-of-data-science/))
-* Brief introduction to the IPython Notebook
 * K-nearest neighbors and scikit-learn ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/08_knn_sklearn.ipynb), [notebook code](code/08_knn_sklearn_nb.py))
 * Exploring the bias-variance tradeoff ([notebook](http://nbviewer.ipython.org/github/justmarkham/DAT7/blob/master/notebooks/08_bias_variance.ipynb), [notebook code](code/08_bias_variance_nb.py))
 
