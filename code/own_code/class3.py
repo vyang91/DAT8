@@ -4,6 +4,8 @@ Created on Tue Aug 25 19:22:08 2015
 
 @author: user
 """
+import csv
+
 
 movies = ['tt0111161', 'tt1856010', 'tt0096694', 'tt0088763', 'tt1375666']
 
@@ -26,5 +28,13 @@ file_string = f.read()
 f.close()
 
 with open('airlines.csv', 'rU') as f:
-    file_string = f.read()
+    file_nested_list = [row for row in csv.reader(f)]
+    
+header = file_nested_list[0]
+data = file_nested_list[1:]
 
+
+avg_incidents_yr = [(float(airline[2]) + float(airline[5]))/30 for airline in data]
+name_clean = [airline[0].replace('*','') for airline in data]
+name_star = [0 if airline[0].find('*') == -1 else 1 for airline in data]
+dict_airlines = dict(zip(name_clean, avg_incidents_yr))
