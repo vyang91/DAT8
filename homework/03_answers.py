@@ -45,6 +45,12 @@ for chip_name in set_chip_names:
     lst_chip_count.append(int_chip_count)
 dict_chip_count = dict(zip(set_chip_names, lst_chip_count))
 
+from collections import defaultdict
+dict_chip_count_2 = defaultdict(list)
+lst_temp = zip(set_chip_names, lst_chip_count)
+for chip, count in lst_temp:
+    dict_chip_count_2[chip].append(count)
+
 print('Part 3 (Average price of an order): {}'.format(avg_order_price))
 print('Part 4 (Set of unique canned sodas and drinks): {}'.format(set_canned))
 print('Part 5 (Average number of toppings per burrito): {}'.format(avg_burrito_topping))
