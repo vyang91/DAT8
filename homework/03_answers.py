@@ -26,13 +26,13 @@ num_orders = len(set(lst_order_ids))
 avg_order_price = sum_prices/num_orders
 
 ## Part 4: Find set of canned drinks from choice description of items with the word canned in them
-lst_canned = [item_order[3] for item_order in data if item_order[2].lower().find('canned') >= 0]
+lst_canned = [item_order[3] for item_order in data if 'canned' in item_order[2].lower()]
 set_canned = set(lst_canned)
 
 ## Part 5: Calculate average number of burrito toppings by counting commas in choice description and dividing by number of burrito orders
-lst_burrito_topping = [item_order[3] for item_order in data if item_order[2].lower().find('burrito') >= 0]
+lst_burrito_topping = [item_order[3] for item_order in data if 'burrito' in item_order[2].lower()]
 count_burrito_topping = [i.count(',') + 1 for i in lst_burrito_topping]
-avg_burrito_topping = float(sum(count_burrito_topping))/len(lst_burrito_topping)
+avg_burrito_topping = round(float(sum(count_burrito_topping))/len(lst_burrito_topping), 2)
 
 ## Part 6: Create dictionary of chip orders and their respective quantities by finding set of chip orders and adding up quantities for each order type
 set_chip_names = set([item_order[2] for item_order in data if item_order[2].lower().find('chip') >= 0])
@@ -50,6 +50,12 @@ dict_chip_count_2 = defaultdict(list)
 lst_temp = zip(set_chip_names, lst_chip_count)
 for chip, count in lst_temp:
     dict_chip_count_2[chip].append(count)
+    
+from collections import defaultdict
+dchips = defaultdict(int)
+for row in data:
+    if 'Chips' in row[2]:
+        dchips[row[2]] += int(row[1])
 
 print('Part 3 (Average price of an order): {}'.format(avg_order_price))
 print('Part 4 (Set of unique canned sodas and drinks): {}'.format(set_canned))
