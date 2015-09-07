@@ -2,13 +2,12 @@
 """
 Created on Thu Sep 03 20:54:09 2015
 
-@author: user
+@author: vyang91
 """
 # cd ~/Desktop/DAT8/data
 # %reset
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 import seaborn as sns
 
 # display plots in the notebook
@@ -39,5 +38,16 @@ pd.scatter_matrix(iris.drop('species_int', axis=1), c=iris.species_int, figsize=
 iris.boxplot(by='species')
 
 iris['petal_area'] = iris.petal_length * iris.petal_width
-sns.violinplot(x='species', y='petal_area', data=iris)
+sns.violinplot(x='species', y='petal_length', data=iris)
 sns.violinplot(x='species', y='petal_width', data=iris)
+sns.violinplot(x='species', y='petal_area', data=iris)
+
+def predict_species(df):
+    ans = df.copy(deep=True);
+    ans['species_pred'] = ''
+    ans.species_pred[df.petal_length <= 2] = 'setosa'
+    ans.species_pred[(df.petal_length > 2) & (df.petal_length <= 5)] = 'versicolor'
+    ans.species_pred[df.petal_length > 5] = 'virginica'
+    return ans
+        
+iris_pred = predict_species(iris)
