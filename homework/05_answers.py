@@ -152,7 +152,7 @@ movies_all[movies_all.actor.isin(top_actor)].groupby('genre').actor.value_counts
 # top actors in each genre
 movies_all.groupby('genre').actor.value_counts()[movies_all.groupby('genre').actor.value_counts() > 2]
 
-# which two actors work together the most often in top 1000 movies
+# which two actors work together the most often in top 1000 movies; the harry potter trio appears the most; highest rated pairs are LotR and Star Wars
 movies_pair_all = pd.Series(pd.concat([movies_new.actor_1 + ', ' + movies_new.actor_2,
                              movies_new.actor_1 + ', ' + movies_new.actor_3,
                              movies_new.actor_2 + ', ' + movies_new.actor_3], axis=0), name='pair')
