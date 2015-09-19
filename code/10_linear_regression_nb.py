@@ -1,6 +1,3 @@
-
-# coding: utf-8
-
 # # Linear Regression
 
 # ## Agenda
@@ -30,15 +27,11 @@
 # 
 # We'll be working with a dataset from Capital Bikeshare that was used in a Kaggle competition ([data dictionary](https://www.kaggle.com/c/bike-sharing-demand/data)).
 
-# In[ ]:
-
 # read the data and set the datetime as the index
 import pandas as pd
 url = 'https://raw.githubusercontent.com/justmarkham/DAT8/master/data/bikeshare.csv'
 bikes = pd.read_csv(url, index_col='datetime', parse_dates=True)
 
-
-# In[ ]:
 
 bikes.head()
 
@@ -49,30 +42,21 @@ bikes.head()
 # - What is the response variable (as defined by Kaggle)?
 # - How many features are there?
 
-# In[ ]:
-
 # "count" is a method, so it's best to name that column something else
 bikes.rename(columns={'count':'total'}, inplace=True)
 
 
 # ## Visualizing the data
 
-# In[ ]:
-
 import seaborn as sns
 import matplotlib.pyplot as plt
-get_ipython().magic(u'matplotlib inline')
 plt.rcParams['figure.figsize'] = (8, 6)
 plt.rcParams['font.size'] = 14
 
 
-# In[ ]:
-
 # Pandas scatter plot
 bikes.plot(kind='scatter', x='temp', y='total', alpha=0.2)
 
-
-# In[ ]:
 
 # Seaborn scatter plot with regression line
 sns.lmplot(x='temp', y='total', data=bikes, aspect=1.5, scatter_kws={'alpha':0.2})
@@ -103,23 +87,17 @@ sns.lmplot(x='temp', y='total', data=bikes, aspect=1.5, scatter_kws={'alpha':0.2
 
 # ## Building a linear regression model
 
-# In[ ]:
-
 # create X and y
 feature_cols = ['temp']
 X = bikes[feature_cols]
 y = bikes.total
 
 
-# In[ ]:
-
 # import, instantiate, fit
 from sklearn.linear_model import LinearRegression
 linreg = LinearRegression()
 linreg.fit(X, y)
 
-
-# In[ ]:
 
 # print the coefficients
 print linreg.intercept_
@@ -143,13 +121,9 @@ print linreg.coef_
 # 
 # How many bike rentals would we predict if the temperature was 25 degrees Celsius?
 
-# In[ ]:
-
 # manually calculate the prediction
 linreg.intercept_ + linreg.coef_*25
 
-
-# In[ ]:
 
 # use the predict method
 linreg.predict(25)
@@ -159,20 +133,14 @@ linreg.predict(25)
 # 
 # Let's say that temperature was measured in Fahrenheit, rather than Celsius. How would that affect the model?
 
-# In[ ]:
-
 # create a new column for Fahrenheit temperature
 bikes['temp_F'] = bikes.temp * 1.8 + 32
 bikes.head()
 
 
-# In[ ]:
-
 # Seaborn scatter plot with regression line
 sns.lmplot(x='temp_F', y='total', data=bikes, aspect=1.5, scatter_kws={'alpha':0.2})
 
-
-# In[ ]:
 
 # create X and y
 feature_cols = ['temp_F']
@@ -188,13 +156,9 @@ print linreg.intercept_
 print linreg.coef_
 
 
-# In[ ]:
-
 # convert 25 degrees Celsius to Fahrenheit
 25 * 1.8 + 32
 
-
-# In[ ]:
 
 # predict rentals for 77 degrees Fahrenheit
 linreg.predict(77)
@@ -202,27 +166,19 @@ linreg.predict(77)
 
 # **Conclusion:** The scale of the features is **irrelevant** for linear regression models. When changing the scale, we simply change our **interpretation** of the coefficients.
 
-# In[ ]:
-
 # remove the temp_F column
 bikes.drop('temp_F', axis=1, inplace=True)
 
 
 # ## Visualizing the data (part 2)
 
-# In[ ]:
-
 # explore more features
 feature_cols = ['temp', 'season', 'weather', 'humidity']
 
 
-# In[ ]:
-
 # multiple scatter plots in Seaborn
 sns.pairplot(bikes, x_vars=feature_cols, y_vars='total', kind='reg')
 
-
-# In[ ]:
 
 # multiple scatter plots in Pandas
 fig, axs = plt.subplots(1, len(feature_cols), sharey=True)
@@ -232,13 +188,9 @@ for index, feature in enumerate(feature_cols):
 
 # Are you seeing anything that you did not expect?
 
-# In[ ]:
-
 # cross-tabulation of season and month
 pd.crosstab(bikes.season, bikes.index.month)
 
-
-# In[ ]:
 
 # box plot of rentals, grouped by season
 bikes.boxplot(column='total', by='season')
@@ -249,8 +201,6 @@ bikes.boxplot(column='total', by='season')
 # - A line can't capture a non-linear relationship.
 # - There are more rentals in winter than in spring (?)
 
-# In[ ]:
-
 # line plot of rentals
 bikes.total.plot()
 
@@ -259,13 +209,9 @@ bikes.total.plot()
 # 
 # There are more rentals in the winter than the spring, but only because the system is experiencing **overall growth** and the winter months happen to come after the spring months.
 
-# In[ ]:
-
 # correlation matrix (ranges from 1 to -1)
 bikes.corr()
 
-
-# In[ ]:
 
 # visualize correlation matrix in Seaborn using a heatmap
 sns.heatmap(bikes.corr())
@@ -275,13 +221,9 @@ sns.heatmap(bikes.corr())
 
 # ## Adding more features to the model
 
-# In[ ]:
-
 # create a list of features
 feature_cols = ['temp', 'season', 'weather', 'humidity']
 
-
-# In[ ]:
 
 # create X and y
 X = bikes[feature_cols]
@@ -295,8 +237,6 @@ linreg.fit(X, y)
 print linreg.intercept_
 print linreg.coef_
 
-
-# In[ ]:
 
 # pair the feature names with the coefficients
 zip(feature_cols, linreg.coef_)
@@ -345,14 +285,10 @@ zip(feature_cols, linreg.coef_)
 # 
 # $$\sqrt{\frac 1n\sum_{i=1}^n(y_i-\hat{y}_i)^2}$$
 
-# In[ ]:
-
 # example true and predicted response values
 true = [10, 7, 5, 5]
 pred = [8, 6, 5, 10]
 
-
-# In[ ]:
 
 # calculate these metrics by hand!
 from sklearn import metrics
@@ -372,8 +308,6 @@ print 'RMSE:', np.sqrt(metrics.mean_squared_error(true, pred))
 # 
 # Here's an additional example, to demonstrate how MSE/RMSE punish larger errors:
 
-# In[ ]:
-
 # same true values as above
 true = [10, 7, 5, 5]
 
@@ -390,8 +324,6 @@ print 'RMSE:', np.sqrt(metrics.mean_squared_error(true, pred))
 
 # ## Comparing models with train/test split and RMSE
 
-# In[ ]:
-
 from sklearn.cross_validation import train_test_split
 
 # define a function that accepts a list of features and returns testing RMSE
@@ -405,23 +337,19 @@ def train_test_rmse(feature_cols):
     return np.sqrt(metrics.mean_squared_error(y_test, y_pred))
 
 
-# In[ ]:
-
+# compare different sets of features
 print train_test_rmse(['temp', 'season', 'weather', 'humidity'])
 print train_test_rmse(['temp', 'season', 'weather'])
 print train_test_rmse(['temp', 'season', 'humidity'])
 
 
-# In[ ]:
-
+# using these as features is not allowed!
 print train_test_rmse(['casual', 'registered'])
 
 
 # ## Comparing testing RMSE with null RMSE
 # 
 # Null RMSE is the RMSE that could be achieved by **always predicting the mean response value**. It is a benchmark against which you may want to measure your regression model.
-
-# In[ ]:
 
 # split X and y into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=123)
@@ -433,8 +361,6 @@ y_null = np.zeros_like(y_test, dtype=float)
 y_null.fill(y_test.mean())
 y_null
 
-
-# In[ ]:
 
 # compute null RMSE
 np.sqrt(metrics.mean_squared_error(y_test, y_null))
@@ -454,8 +380,6 @@ np.sqrt(metrics.mean_squared_error(y_test, y_null))
 # 
 # For season, we can't simply leave the encoding as 1 = spring, 2 = summer, 3 = fall, and 4 = winter, because that would imply an **ordered relationship**. Instead, we create **multiple dummy variables:**
 
-# In[ ]:
-
 # create dummy variables
 season_dummies = pd.get_dummies(bikes.season, prefix='season')
 
@@ -466,8 +390,6 @@ season_dummies.sample(n=5, random_state=1)
 # However, we actually only need **three dummy variables (not four)**, and thus we'll drop the first dummy variable.
 # 
 # Why? Because three dummies captures all of the "information" about the season feature, and implicitly defines spring (season 1) as the **baseline level:**
-
-# In[ ]:
 
 # drop the first column
 season_dummies.drop(season_dummies.columns[0], axis=1, inplace=True)
@@ -480,16 +402,12 @@ season_dummies.sample(n=5, random_state=1)
 # 
 # If that's confusing, think about why we only need one dummy variable for holiday, not two dummy variables (holiday_yes and holiday_no).
 
-# In[ ]:
-
 # concatenate the original DataFrame and the dummy DataFrame (axis=0 means rows, axis=1 means columns)
 bikes = pd.concat([bikes, season_dummies], axis=1)
 
 # print 5 random rows
 bikes.sample(n=5, random_state=1)
 
-
-# In[ ]:
 
 # include dummy variables for season in the model
 feature_cols = ['temp', 'season_2', 'season_3', 'season_4', 'humidity']
@@ -512,8 +430,6 @@ zip(feature_cols, linreg.coef_)
 # 
 # **Important:** Dummy encoding is relevant for all machine learning models, not just linear regression models.
 
-# In[ ]:
-
 # compare original season variable with dummy variables
 print train_test_rmse(['temp', 'season', 'humidity'])
 print train_test_rmse(['temp', 'season_2', 'season_3', 'season_4', 'humidity'])
@@ -528,33 +444,6 @@ print train_test_rmse(['temp', 'season_2', 'season_3', 'season_4', 'humidity'])
 # - **daytime:** as a single categorical feature (daytime=1 from 7am to 8pm, and daytime=0 otherwise)
 # 
 # Then, try using each of the three features (on its own) with `train_test_rmse` to see which one performs the best!
-
-# In[ ]:
-
-# hour as a numeric feature
-bikes['hour'] = bikes.index.hour
-
-
-# In[ ]:
-
-# hour as a categorical feature
-hour_dummies = pd.get_dummies(bikes.hour, prefix='hour')
-hour_dummies.drop(hour_dummies.columns[0], axis=1, inplace=True)
-bikes = pd.concat([bikes, hour_dummies], axis=1)
-
-
-# In[ ]:
-
-# daytime as a categorical feature
-bikes['daytime'] = ((bikes.hour > 6) & (bikes.hour < 21)).astype(int)
-
-
-# In[ ]:
-
-print train_test_rmse(['hour'])
-print train_test_rmse(bikes.columns[bikes.columns.str.startswith('hour_')])
-print train_test_rmse(['daytime'])
-
 
 # ## Comparing linear regression with other models
 # 
