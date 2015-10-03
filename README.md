@@ -151,7 +151,7 @@ Tuesday | Thursday
 ### Class 5: Visualization
 * Python homework with the Chipotle data due ([solution](code/03_python_homework_chipotle.py), [detailed explanation](notebooks/03_python_homework_chipotle_explained.ipynb))
 * Part 2 of Exploratory Data Analysis with Pandas ([code](code/04_pandas.py))
-* Visualization with Pandas and Matplotlib ([code](code/05_pandas_visualization.py), [notebook](notebooks/05_pandas_visualization.ipynb))
+* Visualization with Pandas and Matplotlib ([notebook](notebooks/05_pandas_visualization.ipynb))
 
 **Homework:**
 * Your project question write-up is due on Thursday.
@@ -177,7 +177,7 @@ Tuesday | Thursday
 -----
 
 ### Class 6: Machine Learning
-* Part 2 of Visualization with Pandas and Matplotlib ([code](code/05_pandas_visualization.py), [notebook](notebooks/05_pandas_visualization.ipynb))
+* Part 2 of Visualization with Pandas and Matplotlib ([notebook](notebooks/05_pandas_visualization.ipynb))
 * Brief introduction to the Jupyter/IPython Notebook
 * "Human learning" exercise:
     * [Iris dataset](http://archive.ics.uci.edu/ml/datasets/Iris) hosted by the UCI Machine Learning Repository
@@ -416,8 +416,6 @@ Tuesday | Thursday
 * If you enjoyed Paul Graham's article, you can read [his follow-up article](http://www.paulgraham.com/better.html) on how he improved his spam filter and this [related paper](http://www.merl.com/publications/docs/TR2004-091.pdf) about state-of-the-art spam filtering in 2004.
 * Yelp has found that Naive Bayes is more effective than Mechanical Turks at [categorizing businesses](http://engineeringblog.yelp.com/2011/02/towards-building-a-high-quality-workforce-with-mechanical-turk.html).
 
-<!--
-
 -----
 
 ### Class 15: Natural Language Processing
@@ -428,6 +426,7 @@ Tuesday | Thursday
 
 **Homework:**
 * Your draft paper is due on Thursday (10/8)! Please submit a link to your project repository (with paper, code, data, and visualizations) before class.
+* Watch [Kaggle: How it Works](https://www.youtube.com/watch?v=PoD84TVdD-4) (4 minutes) for a brief overview of the Kaggle platform.
 * Download the competition files, move them to the `DAT8/data` directory, and make sure you can open the CSV files using Pandas. If you have any problems opening the files, you probably need to turn off real-time virus scanning (especially Microsoft Security Essentials).
 * **Optional:** Come up with some theories about which features might be relevant to predicting the response, and then explore the data to see if those theories appear to be true.
 * **Optional:** Watch my [project presentation video](https://www.youtube.com/watch?v=HGr1yQV3Um0) (16 minutes) for a tour of the end-to-end machine learning process for a Kaggle competition, including feature engineering. (Or, just read through the [slides](https://speakerdeck.com/justmarkham/allstate-purchase-prediction-challenge-on-kaggle).)
@@ -437,7 +436,7 @@ Tuesday | Thursday
 * This slide deck defines many of the [key NLP terms](https://github.com/ga-students/DAT_SF_9/blob/master/16_Text_Mining/DAT9_lec16_Text_Mining.pdf).
 * [Natural Language Processing with Python](http://www.nltk.org/book/) is the most popular book for going in-depth with the [Natural Language Toolkit](http://www.nltk.org/) (NLTK).
 * [A Smattering of NLP in Python](https://github.com/charlieg/A-Smattering-of-NLP-in-Python/blob/master/A%20Smattering%20of%20NLP%20in%20Python.ipynb) provides a nice overview of NLTK, as does this [notebook from DAT5](https://github.com/justmarkham/DAT5/blob/master/notebooks/14_nlp.ipynb).
-* [spaCy](https://honnibal.github.io/spaCy/) is a newer Python library for text processing that is focused on performance (unlike NLTK).
+* [spaCy](http://spacy.io/) is a newer Python library for text processing that is focused on performance (unlike NLTK).
 * If you want to get serious about NLP, [Stanford CoreNLP](http://nlp.stanford.edu/software/corenlp.shtml) is a suite of tools (written in Java) that is highly regarded.
 * When working with a large text corpus in scikit-learn, [HashingVectorizer](http://scikit-learn.org/stable/modules/feature_extraction.html#vectorizing-a-large-text-corpus-with-the-hashing-trick) is a useful alternative to CountVectorizer.
 * [Automatically Categorizing Yelp Businesses](http://engineeringblog.yelp.com/2015/09/automatically-categorizing-yelp-businesses.html) discusses how Yelp uses NLP and scikit-learn to solve the problem of uncategorized businesses.
@@ -454,20 +453,26 @@ Tuesday | Thursday
 
 **Homework:**
 * You will be assigned to review the project drafts of two of your peers. You have until Tuesday 10/20 to provide them with feedback, according to the [peer review guidelines](project/peer_review.md).
-* **Optional:** Keep working on this competition! You can make up to 5 submissions per day, and the competition doesn't close until 6:30pm ET on Tuesday 10/27 (class 21).
+* Read [A Visual Introduction to Machine Learning](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) for a brief overview of decision trees.
+* Download and install [Graphviz](http://www.graphviz.org/), which will allow you to visualize decision trees in scikit-learn.
+    * Windows users should also add Graphviz to your path: Go to Control Panel, System, Advanced System Settings, Environment Variables. Under system variables, edit "Path" to include the path to the "bin" folder, such as: `C:\Program Files (x86)\Graphviz2.38\bin`
+* **Optional:** Keep working on our Kaggle competition! You can make up to 5 submissions per day, and the competition doesn't close until 6:30pm ET on Tuesday 10/27 (class 21).
 
 **Resources:**
-* For a great overview of the diversity of problems tackled by Kaggle competitions, watch [Kaggle Transforms Data Science Into Competitive Sport](https://www.youtube.com/watch?v=8w4UY66GKcM) (28 minutes) by Jeremy Howard (past president of Kaggle).
+* [Specialist Knowledge Is Useless and Unhelpful](http://www.slate.com/articles/health_and_science/new_scientist/2012/12/kaggle_president_jeremy_howard_amateurs_beat_specialists_in_data_prediction.html) is a brief interview with Jeremy Howard (past president of Kaggle) in which he argues that data science skills are much more important than domain expertise for creating effective predictive models.
 * [Getting in Shape for the Sport of Data Science](https://www.youtube.com/watch?v=kwt6XEh7U3g) (74 minutes), also by Jeremy Howard, contains a lot of tips for competitive machine learning.
 * [Learning from the best](http://blog.kaggle.com/2014/08/01/learning-from-the-best/) is an excellent blog post covering top tips from Kaggle Masters on how to do well on Kaggle.
 * [Feature Engineering Without Domain Expertise](https://www.youtube.com/watch?v=bL4b1sGnILU) (17 minutes), a talk by Kaggle Master Nick Kridler, provides some simple advice about how to iterate quickly and where to spend your time during a Kaggle competition.
 * These examples may help you to better understand the process of feature engineering: predicting the number of [passengers at a train station](https://medium.com/@chris_bour/french-largest-data-science-challenge-ever-organized-shows-the-unreasonable-effectiveness-of-open-8399705a20ef), identifying [fraudulent users of an online store](https://docs.google.com/presentation/d/1UdI5NY-mlHyseiRVbpTLyvbrHxY8RciHp5Vc-ZLrwmU/edit#slide=id.p), identifying [bots in an online auction](https://www.kaggle.com/c/facebook-recruiting-iv-human-or-bot/forums/t/14628/share-your-secret-sauce), predicting who will [subscribe to the next season of an orchestra](http://blog.kaggle.com/2015/01/05/kaggle-inclass-stanfords-getting-a-handel-on-data-science-winners-report/), and evaluating the [quality of e-commerce search engine results](http://blog.kaggle.com/2015/07/22/crowdflower-winners-interview-3rd-place-team-quartet/).
 * [Our perfect submission](https://www.kaggle.com/c/restaurant-revenue-prediction/forums/t/13950/our-perfect-submission) is a fun read about how great performance on the [public leaderboard](https://www.kaggle.com/c/restaurant-revenue-prediction/leaderboard/public) does not guarantee that a model will generalize to new data.
 
+<!--
+
 -----
 
 ### Class 17: Decision Trees
 * Decision trees ([notebook](notebooks/17_decision_trees.ipynb))
+* Exercise with Capital Bikeshare data ([notebook](notebooks/17_bikeshare_exercise.ipynb), [data](data/bikeshare.csv), [data dictionary](https://www.kaggle.com/c/bike-sharing-demand/data))
 
 **Homework:**
 * Read the "Wisdom of the crowds" section from MLWave's post on [Human Ensemble Learning](http://mlwave.com/human-ensemble-learning/).
@@ -479,16 +484,10 @@ Tuesday | Thursday
 * This paper, [The Science of Singing Along](http://www.doc.gold.ac.uk/~mas03dm/papers/PawleyMullensiefen_Singalong_2012.pdf), contains a neat regression tree for predicting the percentage of an audience at a music venue that will sing along to a pop song.
 * If you want to go deep into the different decision tree algorithms, this slide deck contains [A Brief History of Classification and Regression Trees](https://drive.google.com/file/d/0B-BKohKl-jUYQ3RpMEF0OGRUU3RHVGpHY203NFd3Z19Nc1ZF/view).
 
-**Installing GraphViz (optional):**
-* Mac: [Download and install PKG file](http://www.graphviz.org/Download_macos.php)
-* Windows: [Download and install MSI file](http://www.graphviz.org/Download_windows.php), and then add GraphViz to your path:
-    * Go to Control Panel, System, Advanced System Settings, Environment Variables
-    * Under system variables, edit "Path" to include the path to the "bin" folder, such as: `C:\Program Files (x86)\Graphviz2.38\bin`
-
 -----
 
 ### Class 18: Ensembling
-* Finish decision trees lesson
+* Finish decision trees lesson ([notebook](notebooks/17_decision_trees.ipynb))
 * Ensembling ([notebook](notebooks/18_ensembling.ipynb))
 
 **Resources:**
