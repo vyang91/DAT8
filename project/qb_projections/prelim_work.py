@@ -18,8 +18,40 @@ for game in games_all:
     p = game.players.filter(passing_att=lambda x:x>1).csv('%s.csv' % game)
 #    p = game.players.filter(passing_att=lambda x:x>0).csv('%s.csv' % game.gamekey)
 
-    
-path =r'C:\Users\user\Desktop\DAT8\project\qb_projections\data\temp\attempt_0'
+
+cols = ['name','id','home','team','pos','passing_att','passing_cmp',
+'passing_ints','passing_tds','passing_twopta','passing_twoptm','passing_yds',
+'rushing_att', 'rushing_tds', 'rushing_twopta', 'rushing_twoptm', 'rushing_yds',
+'fumbles_lost'
+]
+
+path =r'C:\Users\user\Desktop\DAT8\project\qb_projections\data\temp\attempt_2'
+years = range(2009, 2014)
+dfs = []
+for year in years:
+    files = glob.glob(path + "/" + str(year) + "/*.csv")
+    for file_ in files:
+#        print str(file_)
+        tempdf = pd.read_csv(file_)
+        missing_col = list(frozenset(cols) - frozenset(tempdf.columns))
+        if len(missing_col) > 0:
+#            print missing_col
+            included_col = list(frozenset(cols) - frozenset(missing_col))
+#            print included_col
+            tempdf = tempdf[included_col]
+            for col in missing_col:
+                tempdf[col] = 0
+        else:
+            tempdf = tempdf[cols]
+        tempdf = tempdf.fillna(0)
+        tempdf['year'] = year
+        home_team = tempdf.team[tempdf.home == 'yes'].unique().repeat(tempdf.shape[0])
+        visitor = tempdf.team[tempdf.home == 'no'].unique().repeat(tempdf.shape[0])
+        tempdf['home_team'] = home_team
+        tempdf['visitor'] = visitor
+        dfs.append(tempdf)
+
+
 allFiles = glob.glob(path + "/*.csv")
 len(allFiles)
 
@@ -46,15 +78,12 @@ for file_ in allFiles[3*len(allFiles)/4:len(allFiles)]:
 dfs5 = pd.concat([dfs3[0], dfs4[0]])
 dfs6 = pd.concat([dfs3[1], dfs4[1]])
 
-cols = ['name','id','home','team','pos','passing_att','passing_cmp',
-'passing_ints','passing_tds','passing_twopta','passing_twoptm','passing_yds',
-'rushing_att', 'rushing_tds', 'rushing_twopta', 'rushing_twoptm', 'rushing_yds'
-]
 
 test_frame = pd.concat(dfs1)
 test_frame[cols]
     
 big_frame = pd.concat(dfs, ignore_index=True)
+big_frame.isnull().sum()
 big_frame[cols].head()
 #frame = pd.concat(list_)
 #
