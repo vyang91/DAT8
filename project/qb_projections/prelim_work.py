@@ -5,15 +5,18 @@ Created on Tue Sep 22 04:01:34 2015
 @author: user
 """
 
+# pip install nflgame
+# conda install seaborn
+
 import nflgame
 import glob
 import pandas as pd
 
-# cd ~/Desktop/DAT8/project/qb_projections/data/temp/attempt_1
-# games_all = nflgame.games(range(2009, 2014), kind='REG')
+# cd ~/DAT8/project/qb_projections/data/temp/attempt_2
+games_all = nflgame.games(range(2009, 2014), kind='REG')
 
 # cd ~/Desktop/DAT8/project/qb_projections/data/temp/attempt_2/2014
-games_all = nflgame.games(2013)
+# games_all = nflgame.games(2013)
 for game in games_all:
     p = game.players.filter(passing_att=lambda x:x>1).csv('%s.csv' % game)
 #    p = game.players.filter(passing_att=lambda x:x>0).csv('%s.csv' % game.gamekey)
@@ -25,7 +28,8 @@ cols = ['name','id','home','team','pos','passing_att','passing_cmp',
 'fumbles_lost'
 ]
 
-path =r'C:\Users\user\Desktop\DAT8\project\qb_projections\data\temp\attempt_2'
+path =r'/Users/lindenthetree/DAT8/project/qb_projections/data/temp/attempt_2'
+#path =r'~/DAT8/project/qb_projections/data/temp/attempt_2'
 years = range(2009, 2014)
 dfs = []
 for year in years:
@@ -51,48 +55,13 @@ for year in years:
         tempdf['visitor'] = visitor
         dfs.append(tempdf)
 
-
-allFiles = glob.glob(path + "/*.csv")
-len(allFiles)
-
-dfs = []
-for file_ in allFiles:
-    dfs.append(pd.read_csv(file_))
-    
-dfs1 = []
-for file_ in allFiles[0:len(allFiles)/4]:
-    dfs1.append(pd.read_csv(file_))
-    
-dfs2 = []
-for file_ in allFiles[len(allFiles)/4:len(allFiles)/2]:
-    dfs2.append(pd.read_csv(file_))
-    
-dfs3 = []
-for file_ in allFiles[len(allFiles)/2:3*len(allFiles)/4]:
-    dfs3.append(pd.read_csv(file_))
-
-dfs4 = []
-for file_ in allFiles[3*len(allFiles)/4:len(allFiles)]:
-    dfs4.append(pd.read_csv(file_))
-
-dfs5 = pd.concat([dfs3[0], dfs4[0]])
-dfs6 = pd.concat([dfs3[1], dfs4[1]])
-
-
-test_frame = pd.concat(dfs1)
-test_frame[cols]
-    
+  
 big_frame = pd.concat(dfs, ignore_index=True)
 big_frame.isnull().sum()
-big_frame[cols].head()
-#frame = pd.concat(list_)
-#
-#
-#for df in dfs:
-#    df_max 
 
 # cd ~/Desktop/DAT8/project/qb_projections/data/lines_csv
-path =r'C:\Users\user\Desktop\DAT8\project\qb_projections\data\lines_csv'
+#path =r'C:\Users\user\Desktop\DAT8\project\qb_projections\data\lines_csv'
+path =r'/Users/lindenthetree/DAT8/project/qb_projections/data/lines_csv'
 allFiles = glob.glob(path + "/*.csv")
 
 dfLines = []
@@ -105,14 +74,16 @@ del bigDfLines['Unnamed: 7']
 bigDfLines.isnull().sum()
 del bigDfLines['Total Line']
 del bigDfLines['Total Line ']
-bigDfLines['year'] = bigDfLines.Date.str[-4:]
+bigDfLines['year'] = bigDfLines.Date.str[-4:].astype(int)
 bigDfLines.Line.hist()
-bigDfLines.Line.boxplot(by='year')
-bigDfLines.groupby('year').Line.plot(kind='box')
+
+bigDfLines[bigDfLines.year >= 2009].groupby('year').Line.boxplot()
+bigDfLines[bigDfLines.year >= 2009].boxplot(column='Line', by='year')
 
 
 # cd ~/Desktop/DAT8/project/qb_projections/data/stats_csv
-path =r'C:\Users\user\Desktop\DAT8\project\qb_projections\data\stats_csv'
+#path =r'C:\Users\user\Desktop\DAT8\project\qb_projections\data\stats_csv'
+path =r'/Users/lindenthetree/DAT8/project/qb_projections/data/stats_csv'
 allFiles = glob.glob(path + "/*.csv")
 
 dfStats = []
@@ -142,7 +113,7 @@ bigDfStats.plot(kind='scatter', x='paydof', y='ScoreDef')
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 from matplotlib import cm
-dir(cm)
+#dir(cm)
 
 plt.rcParams['figure.figsize'] = (6, 4)
 plt.rcParams['font.size'] = 14
