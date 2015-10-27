@@ -55,11 +55,9 @@ Tuesday | Thursday
 
 ### [Comparison of model evaluation procedures and metrics](other/model_evaluation_comparison.md)
 
-<!--
 ### [Advice for getting better at data science](other/advice.md)
 
-### [Additional resources](#additional-resources)
--->
+### [Additional resources](#additional-resources-1)
 
 -----
 
@@ -555,7 +553,7 @@ Tuesday | Thursday
     * [Baltimore homicide data](data/homicides.txt)
     * [Regular expressions 101](https://regex101.com/#python): real-time testing of regular expressions
     * [Reference guide](code/20_regex_reference.py)
-    * Exercise
+    * [Exercise](code/20_regex_exercise.py)
 
 **Homework:**
 * Your final project is due next week!
@@ -577,8 +575,6 @@ Tuesday | Thursday
 * If you want to go really deep with regular expressions, [RexEgg](http://www.rexegg.com/) includes endless articles and tutorials.
 * [5 Tools You Didn't Know That Use Regular Expressions](http://blog.codeschool.io/2015/07/30/5-tools-you-didnt-know-that-use-regular-expressions/) demonstrates how regular expressions can be used with Excel, Word, Google Spreadsheets, Google Forms, text editors, and other tools.
 * [Exploring Expressions of Emotions in GitHub Commit Messages](http://geeksta.net/geeklog/exploring-expressions-emotions-github-commit-messages/) is a fun example of how regular expressions can be used for data analysis, and [Emojineering](http://instagram-engineering.tumblr.com/post/118304328152/emojineering-part-2-implementing-hashtag-emoji) explains how Instagram uses regular expressions to detect emoji in hashtags.
-
-<!--
 
 -----
 
@@ -636,5 +632,3 @@ Tuesday | Thursday
 * [The Global Network of Discovery](http://www.gnod.com/) provides some neat recommenders for music, authors, and movies.
 * [The People Inside Your Machine](http://www.npr.org/blogs/money/2015/01/30/382657657/episode-600-the-people-inside-your-machine) (23 minutes) is a Planet Money podcast episode about how Amazon Mechanical Turks can assist with recommendation engines (and machine learning in general).
 * Coursera has a [course](https://www.coursera.org/learn/recommender-systems) on recommendation systems, if you want to go even deeper into the material.
-
--->
