@@ -2,25 +2,23 @@
 
 Course materials for [General Assembly's Data Science course](https://generalassemb.ly/education/data-science/washington-dc/) in Washington, DC (8/18/15 - 10/29/15).
 
-**Instructor:** [Kevin Markham](http://www.dataschool.io/about/)
+**Instructor:** Kevin Markham ([Data School blog](http://www.dataschool.io/), [email newsletter](http://www.dataschool.io/subscribe/), [YouTube channel](https://www.youtube.com/user/dataschool))
 
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org/repo/justmarkham/DAT8)
 
-### [Course Project](project/README.md)
-
 Tuesday | Thursday
 --- | ---
-8/18: Introduction to Data Science | 8/20: Command Line and<br>Version Control
-8/25: Data Reading and Cleaning | 8/27: Exploratory Data Analysis
-9/1: Visualization<br>**Project Discussion Deadline** | 9/3: Machine Learning<br>**Project Question and Dataset Due**
-9/8: Getting Data | 9/10: K-Nearest Neighbors
-9/15: Basic Model Evaluation | 9/17: Linear Regression
-9/22: **First Project Presentation** | 9/24: Logistic Regression
-9/29: Advanced Model Evaluation | 10/1: Naive Bayes and Text Data
-10/6: Natural Language Processing | 10/8: Kaggle Competition<br>**Draft Paper Due**
-10/13: Decision Trees | 10/15: Ensembling
-10/20: Advanced scikit-learn and<br>Clustering, **Peer Review Due** | 10/22: Regularization and<br>Regular Expressions
-10/27: Course Review and<br>**Final Project Presentation** | 10/29: **Final Project Presentation**
+8/18: [Introduction to Data Science](#class-1-introduction-to-data-science) | 8/20: [Command Line, Version Control](#class-2-command-line-and-version-control)
+8/25: [Data Reading and Cleaning](#class-3-data-reading-and-cleaning) | 8/27: [Exploratory Data Analysis](#class-4-exploratory-data-analysis)
+9/1: [Visualization](#class-5-visualization) | 9/3: [Machine Learning](#class-6-machine-learning)
+9/8: [Getting Data](#class-7-getting-data) | 9/10: [K-Nearest Neighbors](#class-8-k-nearest-neighbors)
+9/15: [Basic Model Evaluation](#class-9-basic-model-evaluation) | 9/17: [Linear Regression](#class-10-linear-regression)
+9/22: [First Project Presentation](#class-11-first-project-presentation) | 9/24: [Logistic Regression](#class-12-logistic-regression)
+9/29: [Advanced Model Evaluation](#class-13-advanced-model-evaluation) | 10/1: [Naive Bayes and Text Data](#class-14-naive-bayes-and-text-data)
+10/6: [Natural Language Processing](#class-15-natural-language-processing) | 10/8: [Kaggle Competition](#class-16-kaggle-competition)
+10/13: [Decision Trees](#class-17-decision-trees) | 10/15: [Ensembling](#class-18-ensembling)
+10/20: [Advanced scikit-learn, Clustering](#class-19-advanced-scikit-learn-and-clustering) | 10/22: [Regularization, Regex](#class-20-regularization-and-regular-expressions)
+10/27: [Course Review](#class-21-course-review-and-final-project-presentation) | 10/29: [Final Project Presentation](#class-22-final-project-presentation)
 
 <!--
 ### Before the Course Begins
@@ -43,13 +41,17 @@ Tuesday | Thursday
 * [Introduction to Python](http://introtopython.org/): A series of IPython notebooks that do a great job explaining core Python concepts and data structures.
 * [Python for Informatics](http://www.pythonlearn.com/book.php): A very beginner-oriented book, with associated [slides](https://drive.google.com/folderview?id=0B7X1ycQalUnyal9yeUx3VW81VDg&usp=sharing) and [videos](https://www.youtube.com/playlist?list=PLlRFEj9H3Oj4JXIwMwN1_ss1Tk8wZShEJ).
 * [A Crash Course in Python for Scientists](http://nbviewer.ipython.org/gist/rpmuller/5920182): Read through the Overview section for a very quick introduction to Python.
-* [Python Quick Reference Guide](https://github.com/justmarkham/python-reference/blob/master/reference.py): My beginner-oriented guide that demonstrates Python concepts through short, well-commented examples.
+* [Python 2.7 Quick Reference](https://github.com/justmarkham/python-reference/blob/master/reference.py): My beginner-oriented guide that demonstrates Python concepts through short, well-commented examples.
 * [Beginner](code/00_python_beginner_workshop.py) and [intermediate](code/00_python_intermediate_workshop.py) workshop code: Useful for review and reference.
 * [Python Tutor](http://pythontutor.com/): Allows you to visualize the execution of Python code.
 
+<!--
 ### Submission Forms
 * [Feedback form](http://bit.ly/dat8feedback)
 * [Homework and project submissions](http://bit.ly/dat8homework)
+-->
+
+### [Course project](project/README.md)
 
 ### [Comparison of machine learning models](other/model_comparison.md)
 
@@ -584,7 +586,7 @@ Tuesday | Thursday
 
 **Resources:**
 * scikit-learn's [machine learning map](http://scikit-learn.org/stable/tutorial/machine_learning_map/) may help you to choose the "best" model for your task.
-* [Choosing a Machine Learning Classifier](http://blog.echen.me/2011/04/27/choosing-a-machine-learning-classifier/) is a short and highly readable comparison of several classification models, [Comparing supervised learning algorithms](http://www.dataschool.io/comparing-supervised-learning-algorithms/) is a model comparison table that I created, and [Supervised learning superstitions cheat sheet](http://ryancompton.net/assets/ml_cheat_sheet/supervised_learning.html) is a more thorough comparison (with links to lots of useful resources).
+* [Choosing a Machine Learning Classifier](http://blog.echen.me/2011/04/27/choosing-a-machine-learning-classifier/) is a short and highly readable comparison of several classification models, [Classifier comparison](http://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html) is scikit-learn's visualization of classifier decision boundaries, [Comparing supervised learning algorithms](http://www.dataschool.io/comparing-supervised-learning-algorithms/) is a model comparison table that I created, and [Supervised learning superstitions cheat sheet](http://ryancompton.net/assets/ml_cheat_sheet/supervised_learning.html) is a more thorough comparison (with links to lots of useful resources).
 * [Machine Learning Done Wrong](http://ml.posthaven.com/machine-learning-done-wrong), [Machine Learning Gremlins](https://www.youtube.com/watch?v=tleeC-KlsKA) (31 minutes), [Clever Methods of Overfitting](http://hunch.net/?p=22), and [Common Pitfalls in Machine Learning](http://danielnee.com/?p=155) all offer thoughtful advice on how to avoid common mistakes in machine learning.
 * [Practical machine learning tricks from the KDD 2011 best industry paper](http://blog.david-andrzejewski.com/machine-learning/practical-machine-learning-tricks-from-the-kdd-2011-best-industry-paper/) and Andrew Ng's [Advice for applying machine learning](http://cs229.stanford.edu/materials/ML-advice.pdf) include slightly more advanced advice than the resources above.
 * [An Empirical Comparison of Supervised Learning Algorithms](http://www.cs.cornell.edu/~caruana/ctp/ct.papers/caruana.icml06.pdf) is a readable research paper from 2006, which was also presented as a [talk](http://videolectures.net/solomon_caruana_wslmw/) (77 minutes).
